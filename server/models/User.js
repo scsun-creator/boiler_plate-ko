@@ -60,7 +60,6 @@ userSchema.pre('save',function (next){
 userSchema.methods.comparePassword = function (plainPassword,callback){
 
     let user = this;
-
     bcrypt.compare(plainPassword,user.password,function (err,isMatch){
 
         if(err){
@@ -89,7 +88,7 @@ userSchema.statics.findByToken = function (token,callback){
 
     // 토큰 디코드
     jwt.verify(token, 'secretToken',function (err,decoded){
-        // 유저아이디를 이용해서 유저를 찾은 당므에 클라이언트에서 가져온 토큰과
+        // 유저아이디를 이용해서 유저를 찾은 다음에 클라이언트에서 가져온 토큰과
         // db에 보관된 토큰이 일치하는지 확인
 
         user.findOne({"token" : token, "_id" : decoded},function (err, user){

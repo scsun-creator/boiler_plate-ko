@@ -45,9 +45,9 @@ function RegisterPage(props) {
 
         dispatch(registerUser(body)).then(res => {
             if (res.payload.success){
-                props.history.push('/login')
+                props.history.push('/login');
             }else{
-                alert('Faled to sign up')
+                alert('Faled to sign up');
             }
 
         })
@@ -75,11 +75,8 @@ function RegisterPage(props) {
                 <label>Confirm Password</label>
                 <input type="password" value={ConfirmPassword} onChange={onConfirmPasswordHandler} />
                 <br/>
-                <button type="submit">
-                    회원가입
-                </button>
+                <button type="submit">회원가입</button>
             </form>
-
         </div>
     );
 }

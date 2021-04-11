@@ -1,6 +1,7 @@
 import React ,{useEffect}from 'react';
 import axios from "axios";
 import {withRouter} from "react-router-dom";
+import Footer from '../Footer/Footer';
 
 function LandingPage(props) {
 
@@ -15,9 +16,17 @@ function LandingPage(props) {
         })
     }
 
+    // const onClickHandler = ()=>{
+
+    //     props.history.push('/login')
+    // }
+
 
     useEffect(() => {
-        axios.get('/api/hello').then(res => console.log(res))
+        axios.get('/api/hello').then(res => {
+            console.log('처음 랜딩 페이지');
+            console.log(res)
+        })
 
     },[])
 
@@ -27,11 +36,8 @@ function LandingPage(props) {
             display:"flex",justifyContent : 'center',alignItems : 'center'
             ,width:'100%',height:'100vh'
         }}>
-            <h2>시작페이지</h2>
-            
-            <button onClick={onClickHandler}>
-                로그아웃
-            </button>
+            <h2>안녕하세요!</h2>
+            <button onClick={onClickHandler} >로그인</button>
         </div>
     );
 }
