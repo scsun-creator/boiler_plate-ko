@@ -1,5 +1,7 @@
 # boiler_plate-ko
 
+###주요 기능
+
 몽구스, 노드, 리액트를 이용한 CRUD 게시판 구현
 
 react-redux를 이용한 상태관리
